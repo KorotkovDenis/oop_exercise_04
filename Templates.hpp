@@ -168,5 +168,17 @@ std::enable_if_t<is_figurelike_tuple_v<T>, void> print(std::ostream& os, const T
 }
 
 
+/*
 
+template<T, U>
+bool is_tuples_converts()
+*/
+
+
+template <T, U>
+struct is_tuples_convert : std::false_type {};
+
+template <H1, ...T1, H2, ...T2>
+struct is_tuples_convert : std::conjunction<std::tuple<H1, T1...>, std::tuple<H2, T2...>>
+typename (U.x);
 #endif //LAB4_TEMPLATES_HPP
